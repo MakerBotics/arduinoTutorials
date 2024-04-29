@@ -1,10 +1,10 @@
-"""
+/*
 Created by MakerStore on the 30/04/2024
 
 Module for calculating the distance (cm) using an A0221AT ultrasonic sensor
 on an Arduino Uno
 
-"""
+*/
 
 #include <SoftwareSerial.h>
 #include <Wire.h>
