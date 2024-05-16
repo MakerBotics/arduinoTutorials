@@ -78,7 +78,7 @@ void setup() {
   }
 
   // Start & init the CAN bus at 500 kbps
-  if (!CAN.begin(500Es3)) {
+  if (!CAN.begin(500E3)) {
     Serial.println("Starting CAN failed!");
     while (1);
   }
