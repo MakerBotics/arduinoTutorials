@@ -60,7 +60,7 @@ boolean readPMSdata(Stream *s) {
   return true;
 }
 
-/* Initialising the serial * pms serial with a 9600 baud rate */
+/* Initialising the serial & pms serial with a 9600 baud rate */
 void setup() {
   Serial.begin(9600);
   pms.begin(9600);
