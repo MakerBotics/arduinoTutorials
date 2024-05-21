@@ -25,7 +25,7 @@ struct pms5003 {
 struct pms5003 data;
 
 /* Reading in the data from the pms serial */
-boolean readPMSdata(Stream *s) {
+boolean readPMS(Stream *s) {
   if (! s->available()) { return false; }
   
   // Waiting for the '0x42' start byte
@@ -49,7 +49,7 @@ boolean readPMSdata(Stream *s) {
     buffer_u16[i] += (buffer[2 + i*2] << 8);
   }
  
-  // Copy the data into the struct
+  // Copying the data into the struct
   memcpy((void *)&data, (void *)buffer_u16, 30);
  
   // Checking if the data was successfully read
@@ -69,7 +69,7 @@ void setup() {
 /* Gathering & displaying the sensor data */
 void loop() {
   // Checking if the data was successfully read
-  if (readPMSdata(&pms)) {
+  if (readPMS(&pms)) {
     Serial.println("-----------------------------------------");
     Serial.print("Particles > 0.3um:"); 
     Serial.println(data.p_03um);
